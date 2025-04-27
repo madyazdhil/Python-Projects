@@ -62,12 +62,6 @@ This tool made it **fast**, **organized**, and even **fun**!
 
 ---
 
-## 📸 Screenshots
-
-_(You can add some screenshots from your app here later if you want — I can also help you make a nice banner!)_
-
----
-
 ## 🏗️ Future Improvements
 
 - Add student photos to reports.
