@@ -1,0 +1,4 @@
+Friday|12:00 - 13:00|Alice Johnson,Benjamin Lee,Chloe Smith|Teens|Robot|15|15-04-2025
+Tuesday|13:45 - 15:00|Daniel Brown,Ella Davis,Finn Taylor|Kids|Robot|15|28-04-2025
+Tuesday|12:00 - 13:00|Grace Wilson,Henry Martin,Isla Anderson,Jack Thomas,Katie White|Teens|Web|15|17-04-2025
+Monday|14:30 - 16:00|Liam Harris,Mia Lewis,Noah Walker,Olivia Hall|Teens|Robot|20|02-04-2025
