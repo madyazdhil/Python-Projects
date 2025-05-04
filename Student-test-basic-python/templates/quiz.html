@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Coding Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #e9ecef;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #007bff;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .list-group-item {
+            border: 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .list-group-item::before {
+            content: attr(data-section-number);
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ced4da;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .list-group-item.active::before {
+            background-color: #007bff;
+        }
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            resize: none;
+            min-height: 200px;
+            font-family: monospace;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .btn-action {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .card {
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 0.25rem;
+            margin-bottom: 20px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .progress {
+            height: 10px;
+            margin-bottom: 20px;
+        }
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Test your Python Understanding</h2><br>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{ (answered_questions / total_questions * 100) }}%"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group">
+                    {% for topic in selected_topics %}
+                    <li class="list-group-item {% if loop.index0 == current_topic_index %}active{% endif %}"
+                        data-section-number="{{ loop.index }}">
+                        {{ topic }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="quizForm">
+                            <div class="form-group">
+                                <label for="question"><strong>Topic:</strong> {{ current_topic }}</label>
+                                <p>{{ question }}</p>
+                                <textarea class="form-control" id="answer" name="answer" placeholder="code in your IDE and paste it here... or just type here."></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-action" id="submitBtn">Check Answer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="alertContainer" style="position: fixed; top: 20px; right: 20px; width: 300px; z-index: 1000;">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script>
+        const quizData = {
+            totalQuestions: {{ total_questions }},
+            answeredQuestions: {{ answered_questions }}
+        };
+    </script>
+   <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

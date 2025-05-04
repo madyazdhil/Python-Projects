@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Quiz!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        .topic-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .start-btn {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="py-5 text-center">
+            <h1>Basic Python Test</h1>
+            <p class="lead">
+                You told Mr. Yazid that you already understand the basics of Python Programming Language.<br>
+                Now, it's time to put that to a test!
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="topic-container">
+                        <div class="alert alert-warning text-center" role="alert">
+                            Choose the topics you already understand, and start answering the questions
+                        </div>
+
+                        <form action="/start_quiz" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="data_types" value="data_types">
+                                        <label class="form-check-label" for="data_types">Data Types</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="variable" value="variable">
+                                        <label class="form-check-label" for="variable">Variables</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="input_output" value="input_output">
+                                        <label class="form-check-label" for="input_output">Input & Output</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="function" value="function">
+                                        <label class="form-check-label" for="function">Functions</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="conditionals" value="conditionals">
+                                        <label class="form-check-label" for="conditionals">Conditionals</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="random_module" value="random_module">
+                                        <label class="form-check-label" for="random_module">Random Module</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="looping" value="looping">
+                                        <label class="form-check-label" for="looping">Looping</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="topics" id="array" value="array">
+                                        <label class="form-check-label" for="array">Arrays</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary start-btn">Start Quiz</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
