@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co-Ex by Mr.Ahmad Yazid</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div>
+    <div class="container">
+        <p style="text-align: center">Coding Exercise for <strong>{{ hero_name }}</strong> on {{ language }}</p>
+        <h2 class="header">Question #{{ question_number }} of {{ total_questions }}</h2>
+        <div class="inside">
+            {{ question | safe }}
+            {% if feedback and feedback.strip() != '' %}
+            <div class="feedback">
+                <h4>Feedback</h4>
+                <p>{{ feedback | safe }}</p>
+            </div>
+            {% endif %}
+            <p>Attempts left: {{ attempts_left }}</p>
+        </div>
+        {% if attempts_left > 0 and not show_next_button %}
+        <form method="POST" action="{{ url_for('submit_answer') }}">
+            <div class="inside">
+                <h4>Your Answer</h4>
+                <label><textarea name="user_code" rows="9" placeholder="Paste the answer here"></textarea></label>
+            </div>
+            <button type="submit">Submit Answer</button>
+        </form>
+        {% elif show_next_button and question_number < total_questions %}
+        <form method="POST" action="{{ url_for('submit_answer') }}">
+            <input type="hidden" name="user_code" value="strawberry ice cream">
+            <button type="submit">Next Question</button>
+        </form>
+        {% elif session.get('finished') or (show_next_button and question_number == total_questions) %}
+        <form method="GET" action="{{ url_for('result') }}">
+            <button type="submit">Finished</button>
+        </form>
+        {% else %}
+        <p>No attempts left for this question.</p>
+        {% if question_number < total_questions %}
+        <form method="POST" action="{{ url_for('submit_answer') }}">
+            <input type="hidden" name="user_code" value="strawberry ice cream">
+            <button type="submit">Next Question</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+<div class="copyright">Co-Ex ©Mr.Ahmad Yazid</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co-Ex Results by Mr.Ahmad Yazid</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div>
+    <div class="container">
+        <h2 class="header">🌟 Results for <strong>{{ hero_name }}</strong> 🌟</h2>
+        <div class="inside">
+            <h4><span class="star">✏️</span> Super Coder:</h4>
+            <p>Wow! Our coding champion answered <strong>{{ correct_answers }}</strong> out of <strong>{{ total_questions }}</strong> challenges correctly!</p>
+            <p>They've mastered:</p>
+            <ul>
+                {% for topic in mastered_topics %}
+                <li>{{ topic | safe }}</li>
+                {% endfor %}
+            </ul>
+            {% if feedback and feedback.strip() != '' %}
+            <h4><span class="star">📝</span> Feedback:</h4>
+            <p>{{ feedback | safe }}</p>
+            {% endif %}
+            <form method="GET" action="{{ url_for('index') }}">
+                <button type="submit">Do it again</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="copyright">Co-Ex ©Mr.Ahmad Yazid</div>
+</body>
+</html>

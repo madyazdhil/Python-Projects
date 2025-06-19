@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co-Ex by Mr.Ahmad Yazid</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    {% if error %}
+    <div style="color: #f4f8ff; background-color: #ff3827; padding:2%; text-align: center;">
+        <h1>{{ error }}</h1>
+    </div>
+    {% endif %}
+
+    <h1 class="header">🌟 Coding Adventure Time! 🌟</h1>
+    <p>Welcome to your coding playground! Let's check how well you understand the programming magic you just learned. Our friendly robot with the powerful AI will create fun challenges for you!</p>
+    <form method="POST" action="{{ url_for('home') }}">
+        <h3 class="header">Pick your coding superpower!</h3>
+
+        <label>Choose your magic language:
+            <select name="language">
+                <option>Python</option>
+                <option>JavaScript</option>
+                <option>Java</option>
+            </select>
+        </label>
+
+        <label><input type="checkbox" name="concept" value="variables"> 🎪 Variable Circus</label>
+        <label><input type="checkbox" name="concept" value="data-types"> 🧩 Data Type Puzzles</label>
+        <label><input type="checkbox" name="concept" value="conditional-statements"> 🚦 Decision Maker (if, else)</label>
+        <label><input type="checkbox" name="concept" value="for-loop"> 🔄 Loop-de-Loop (For)</label>
+        <label><input type="checkbox" name="concept" value="while-loop"> ⏳ Keep Going (While)</label>
+        <label><input type="checkbox" name="concept" value="do-while-loop"> 🔄 First Try (Do-While)</label>
+        <label><input type="checkbox" name="concept" value="functions"> 🪄 Magic Spells (Functions)</label>
+        <label><input type="checkbox" name="concept" value="operators"> ➕ Math Wizards (Operators)</label>
+        <label><input type="checkbox" name="concept" value="input-output"> 📨 Talking to Computers</label>
+        <label><input type="checkbox" name="concept" value="comments"> 💬 Secret Notes (Comments)</label>
+        <label><input type="checkbox" name="concept" value="error-handling"> 🚑 Code Ambulance</label>
+        <label><input type="checkbox" name="concept" value="arrays"> 🧺 Treasure Chests (Arrays)</label>
+        <label>Your Special Challenge:<input type="text" name="customChallenge"></label>
+
+        <h3 class="header">Adventure Settings</h3>
+        <label>Your Hero Name:<input type="text" name="heroName" required></label>
+        <label>Number of Challenges
+            <select name="challengeCount">
+                <option value="3">3 (Quick Quest)</option>
+                <option value="5">5 (Epic Journey)</option>
+                <option value="10">10 (Mega Adventure)</option>
+            </select>
+        </label>
+        <label>How Tough?
+            <select name="difficulty">
+                <option>Easy Peasy</option>
+                <option>Brain Stretcher</option>
+                <option>Super Challenge</option>
+            </select>
+        </label>
+
+        <button type="submit">🚀 Start Coding Adventure!</button>
+    </form>
+
+    <div class="copyright">Co-Ex ©Mr.Ahmad Yazid</div>
+
+    <div></div>
+</div>
+</body>
+</html>

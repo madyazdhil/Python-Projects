@@ -1,0 +1,117 @@
+body{
+    background-color: #e6e9ff;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Lucida Bright;
+    color: #2754ff;
+}
+
+.container{
+    border-style: solid;
+    border-color: #2754ff;
+    background-color: #f4f8ff;
+    padding:2%;
+
+    margin: 5% auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header{
+    font-family: Lucida Sans Typewriter;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background-color: #2754ff;
+    color: #f4f8ff;
+    padding: 2%;
+    width: ;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    accent-color: #2754ff;
+}
+
+
+
+input[type="text"],
+select {
+    padding: 0.5rem;
+    border: 1px solid #2754ff;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #1a3c99;
+    outline: none;
+    box-shadow: 0 0 5px rgba(39, 84, 255, 0.3);
+}
+
+textarea{
+    padding: 0.5rem;
+    border: 1px solid #2754ff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+textarea:focus{
+    border-color: #1a3c99;
+    outline: none;
+    box-shadow: 0 0 5px rgba(39, 84, 255, 0.3);
+}
+
+.inside{
+    padding: 2%;
+
+}
+
+.feedback{
+    border: 0.7px dotted #2754ff;
+    background-color: #ffb0b3;
+    padding:2%;
+}
+
+
+button {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 2rem;
+    background-color: #2754ff;
+    color: white;
+    border: none;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.3em;
+    font-size: 0.9rem;
+    background-color: #2754ff;
+    color:#f4f8ff;
+    z-index: 1000;
+}
